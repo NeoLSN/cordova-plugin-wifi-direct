@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+  xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+  xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-wifi-direct" version="0.1.0">
+  <name>Wifi Direct</name>
+  <description>Android wifi direct library.</description>
+  <author>Jason Yang</author>
+  <engines>
+    <engine name="cordova" version=">=5.0.0"/>
+  </engines>
+  <!-- android -->
+  <platform name="android">
+    <js-module src="www/wifi_direct.js" name="WifiDirect">
+      <clobbers target="cordova.plugins.wifi_direct" />
+    </js-module>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+      <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+      <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="WifiDirect">
+        <param name="android-package" value="com.android.plugins.wifidirect.WifiDirect" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/com/android/plugins/wifidirect/WifiDirect.java" target-dir="src/com/android/plugins/wifidirect"/>
+    <source-file src="src/android/com/android/plugins/wifidirect/library/Constants.java" target-dir="src/com/android/plugins/wifidirect/library/"/>
+    <source-file src="src/android/com/android/plugins/wifidirect/library/ServiceData.java" target-dir="src/com/android/plugins/wifidirect/library/"/>
+    <source-file src="src/android/com/android/plugins/wifidirect/library/WifiDirectNode.java" target-dir="src/com/android/plugins/wifidirect/library/"/>
+    <source-file src="src/android/com/android/plugins/wifidirect/library/WiFiDirectNodeReceiver.java" target-dir="src/com/android/plugins/wifidirect/library/"/>
+  </platform>
+</plugin>

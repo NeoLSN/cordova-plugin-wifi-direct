@@ -1,0 +1,37 @@
+{
+  "name": "cordova-plugin-wifi-direct",
+  "version": "0.1.0",
+  "description": "Android wifi direct.",
+  "cordova": {
+    "id": "cordova-plugin-wifi-direct",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeoLSN/cordova-plugin-wifi-direct.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova",
+    "plugin",
+    "wifi-direct",
+    "wifi"
+  ],
+  "author": "Jason Yang",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/NeoLSN/cordova-plugin-wifi-direct/issues"
+  },
+  "homepage": "https://github.com/NeoLSN/cordova-plugin-wifi-direct",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "typescript": "^2.5.2"
+  },
+  "scripts": {
+    "start": "gulp",
+    "ts_build": "cp www_src/template.js www/wifi_direct.js; tsc --outFile output/output.js www_src/wifi_direct.ts; cat output/output.js >> www/wifi_direct.js"
+  }
+}
